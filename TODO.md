@@ -1,27 +1,29 @@
 # TO-DO LIST
 
 ## 1
-- Crear las relaciones en la tabla movies con la table de generos y la de actores
+- Instalar express Validator
 
 ## 2
--  Crear la relacion en la tabla Generos con la tabla movies
+-  Crear la carpeta middlewares y 3 archivos: login-validator, register-validator y new-movie-validator
 
 ## 3 
-- Crear la relacion en la tabla actores con la tabla movies.
+- dentro de cada archivo creado en el punto anterior, requerir express-validator( destructuring body), crear un array de validaciones,. y exportar dicho array. 
 
 ## 4
-- En controlador de show, (detalle de pelicula), incluir en la query las tablas de generos y actores asociadas.
+- en el archivo de ruta que correspónda , requerir el modulo creado en middlewares e introducirlo en la ruta correspondiente entre el path y el controllador, separado por comas. (debe ser una ruta de tipo post que maneje el formulario )
 
 ## 5 
-- En la vista de movie mostrar el genero de la pelicula y los actores q participaron en ella. 
+- Login Validation:
+- - en el archivo login-validatior, crear las validaciones correspondientes dentro del array.
+- - Luego en el loginController, requerir los resultados de la validacion (validationResult) de express-validator.
+- - en el controilador de el formulario de login aplicar las validaciones.
 
 ## 6
-- Control de acceso en la vista de crear pelicula, si un usuario no esta logueado no podra crear pelicula
+- hacer el mismo proceso para register
 
 ## 7 
-- Crear el controllador genreDetail (en genreControllers), que mostrara la vista genre.ejs, al hacer click en un genero en el detalle de peliculas, entrara añ controlador y mostrara una lista con todas las peliculas de ese genero
-## 8 
-crear controllador que  muestre detalle del actor, debera mostrar las peliculas en las que actua, y ademas su pelicula favorita. 
+- hacer el mismo proceso para crear pelicula
+
 
 
 
