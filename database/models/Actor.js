@@ -1,4 +1,4 @@
-module.exports = function (sequelize, dataTypes){
+module.exports = function (sequelize, dataTypes) {
 
     let alias = 'Actor'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
 
@@ -8,9 +8,9 @@ module.exports = function (sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        created_at : {
+        created_at: {
             type: dataTypes.DATE,
-            allowNull:true,
+            allowNull: true,
         },
         updated_at: {
             type: dataTypes.DATE,
@@ -32,22 +32,27 @@ module.exports = function (sequelize, dataTypes){
     }
 
     let config = {
-        tableName : "actors",
-        timestamps:false, 
+        tableName: "actors",
+        timestamps: false,
         // underscored: true, 
     };
 
     const Actor = sequelize.define(alias, cols, config);
-    
-    Actor.associate = function(models){
-       Actor.belongsToMany(models.Movie, {
-           as:'movies',
-           through:'actor_movie',
-           foreignKey: 'actor_id',
-           otherKey:'movie_id',
-           timestamps: false,           
-       })
-   }
+
+    Actor.associate = function (models) {
+        Actor.belongsToMany(models.Movie, {
+            as: 'movies',
+            through: 'actor_movie',
+            foreignKey: 'actor_id',
+            otherKey: 'movie_id',
+            timestamps: false,
+        })
+        Actor.belongsTo(models.Movie, {
+            as: 'favMovie',
+            foreignKey: 'favorite_movie_id',
+            timestamps: false,
+        })
+    }
 
     return Actor;
 

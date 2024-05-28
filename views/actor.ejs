@@ -26,7 +26,7 @@
                 </ul>
                 <h5 class="card-title">Película Favorita</h5>
                 <% if (actor.favorite_movie_id) { %>                 
-                    <p class="card-text"><a href="/movies/detail/<%= actor.favorite_movie_id %>"><%= actor.favorite_movie.title %></a></p>
+                    <p class="card-text"><a href="/movies/detail/<%= actor.favMovie.id %>"><%= actor.favMovie.title %></a></p>
                 <% } %>
             </div>
         </div>

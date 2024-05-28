@@ -6,16 +6,15 @@ const actorController = {
         let id = req.params.id;
 
         db.Actor.findByPk(id, {
-            include: [{ association: 'movies' }]
+            include: [
+                { association: 'movies' },
+                {association: "favMovie"}
+            ]
         })
         .then(data => {
             if (data.favorite_movie_id) {
                 console.log("data actores: ", JSON.stringify(data, null, 4));
-                db.Movie.findByPk(data.favorite_movie_id)
-                .then(favMovie => {
-                    data.favorite_movie = favMovie;
-                    return res.render('actor', { actor: data });
-                });
+                return res.render('actor', { actor: data });                
             } else {
                 return res.render('actor', { actor: data });
             }
