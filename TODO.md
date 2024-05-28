@@ -17,12 +17,15 @@
 - - en el archivo login-validatior, crear las validaciones correspondientes dentro del array.
 - - Luego en el loginController, requerir los resultados de la validacion (validationResult) de express-validator.
 - - en el controilador de el formulario de login aplicar las validaciones.
+- - en el EJS , agregar codigo necesario para mostrar el error.
+- - en en EJS, tambien agregar codigo necesario para que si el usuario ingreso bien algun input, este se cargue si hay error y no lo tenga q volver a escribir. 
 
 ## 6
 - hacer el mismo proceso para register
 
 ## 7 
 - hacer el mismo proceso para crear pelicula
+
 
 
 
